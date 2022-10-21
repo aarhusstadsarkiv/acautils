@@ -1,5 +1,5 @@
 from pathlib import Path
-from acautils import setup_log, version_handler
+from acautils import standard_log, version_handler
 
 
 class TestUnit:
@@ -22,7 +22,7 @@ class TestUnit:
         GIVEN the path to the tmp_path
         THEN a log should be made in the dir with the version of the tool as its first line
         """
-        setup_log.setup_logger(tmp_path, "test")
+        standard_log.setup_logger(tmp_path, "test")
         log_path: Path = tmp_path / "_metadata" / "test.log"
         assert log_path.exists()
         first_line: str = log_path.read_text()
