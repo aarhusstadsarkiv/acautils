@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "acautils"
-version = "0.1.0"
+version = "0.1.1"
 description = "Shared functionality across ACA tools"
 authors = ["Magnus Lindholm <malini@aarhus.dk>"]
 license = "GPL 3.0"
