@@ -1,11 +1,12 @@
-from logging import Logger
 from pathlib import Path
 from acautils import setup_log, version_handler
+
 
 class TestUnit:
     """
     Small unit tests to ensure functionality is as expected
     """
+
     def test_version(self, poetry_version):
         """
         WHEN the get_version script is called
@@ -19,11 +20,10 @@ class TestUnit:
         """
         WHEN a new log is made
         GIVEN the path to the tmp_path
-        THEN a log should be made in the dir with the version of the tool as its first line 
+        THEN a log should be made in the dir with the version of the tool as its first line
         """
         setup_log.setup_logger(tmp_path, "test")
         log_path: Path = tmp_path / "_metadata" / "test.log"
         assert log_path.exists()
         first_line: str = log_path.read_text()
         assert version_handler.get_version() in first_line
-

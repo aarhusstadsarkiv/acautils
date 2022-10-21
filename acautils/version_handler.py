@@ -1,5 +1,6 @@
 from pathlib import Path
 
+
 def get_version() -> str:
     """
     Gets the version from the .toml file for the project it is currently loaded in to. If none can be found, returns unknown version

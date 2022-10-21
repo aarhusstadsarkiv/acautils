@@ -2,6 +2,7 @@ from pathlib import Path
 import logging
 from acautils.version_handler import get_version
 
+
 def setup_logger(path: Path, name: str) -> logging.Logger:
     """
     General method for setting op a log object. Ensures that the different logs we use across tools are
