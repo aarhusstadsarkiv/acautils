@@ -31,6 +31,7 @@ class TestLog:
         - GIVEN the path to the tmp_path
         - THEN a log should be made in the dir
         """
-        standard_log.setup_logger(tmp_path, "test")
-        log_path: Path = tmp_path / "_metadata" / "test.log"
+        log_path: Path = Path(tmp_path / "_metadata/test.txt")
+        log_path.parent.mkdir()
+        standard_log.setup_logger(log_path)
         assert log_path.exists()
