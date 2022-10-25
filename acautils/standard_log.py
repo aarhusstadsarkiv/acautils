@@ -8,8 +8,8 @@ def setup_logger(path: Path, name: str) -> logging.Logger:
     General method for setting op a log object. Ensures that the different logs we use across tools are
     standardized
     ## Args
-    * path: a path object designating the root in the hand-in. The scripts then puts the .log file in the _metadata folder from that root, creating it if none exists.
-    * name: the name of the log file, e.g. 'digiarchlog'. The .log extension is automatically added
+    * path: a path object designating the root in the hand-in. The scripts then puts the `.log` file in the _metadata folder from that root, creating it if none exists.
+    * name: the name of the log file, e.g. 'digiarchlog'. The `.log` extension is automatically added
     """
     log: logging.Logger = logging.getLogger(name)
     log_root: Path = path / "_metadata"
@@ -24,5 +24,5 @@ def setup_logger(path: Path, name: str) -> logging.Logger:
     file_handler.setFormatter(log_fmt)
     log.addHandler(file_handler)
     log.setLevel(logging.INFO)
-    log.info(get_version())
     return log
+7
