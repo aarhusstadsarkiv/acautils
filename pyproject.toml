@@ -7,7 +7,6 @@ license = "GPL 3.0"
 
 [tool.poetry.dependencies]
 python = ">=3.8"
-pathlib = "^1.0.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.3"
