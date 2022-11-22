@@ -35,3 +35,13 @@ jobs:
           poetry run flake8
           poetry run black --check .
           poetry run mypy .
+
+jobs:
+  check:
+    name: Check version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v1
+      - name: Run check_version.sh
+        run: sh .github/check_version.sh
