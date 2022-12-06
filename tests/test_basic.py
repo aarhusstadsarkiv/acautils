@@ -33,5 +33,5 @@ class TestLog:
         """
         log_path: Path = Path(tmp_path / "_metadata/test.txt")
         log_path.parent.mkdir()
-        standard_log.setup_logger(log_path)
+        standard_log.setup_logger(__name__, log_path)
         assert log_path.exists()

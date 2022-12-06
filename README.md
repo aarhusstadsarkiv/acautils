@@ -22,4 +22,4 @@ In order to integrate the logger, in the `main.py` file you import the `setup_lo
 E.g. if `main.py` called a function in `functionality1.py` and also in `functionality3.py`. Each of these scripts then log to their respective descendant logs, which is propagated up to the parent log, the base log, and then written to the file specified by that logs handler. 
 
 ## Version_handler
-Gets and displays the version number in a uniform way for every tool. Requires a .toml file containing the version number
+Gets and displays the version number in a uniform way for every tool. Requires a valid pyproject.toml file containing the version number
