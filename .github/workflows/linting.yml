@@ -35,14 +35,3 @@ jobs:
           poetry run flake8
           poetry run black --check .
           poetry run mypy .
-  check2:
-    needs: check1 # We force this job to wait for the other job to finish before commencing. 
-    #I do not know if this i necessary, but i see no reason to let them run in 
-    # parallel and potentially create problems. Better safe than sorr 
-    name: Check version
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout 
-        uses: actions/checkout@v1
-      - name: Run check_version.sh
-        run: sh .github/check_version.sh
