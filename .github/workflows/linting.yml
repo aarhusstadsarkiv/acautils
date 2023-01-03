@@ -6,7 +6,7 @@ on:
 
 
 jobs:
-  check:
+  check1:
     name: Check linting & types
     runs-on: ubuntu-latest
     steps:
@@ -35,9 +35,10 @@ jobs:
           poetry run flake8
           poetry run black --check .
           poetry run mypy .
-
-jobs:
-  check:
+  check2:
+    needs: check1 # We force this job to wait for the other job to finish before commencing. 
+    #I do not know if this i necessary, but i see no reason to let them run in 
+    # parallel and potentially create problems. Better safe than sorr 
     name: Check version
     runs-on: ubuntu-latest
     steps:
