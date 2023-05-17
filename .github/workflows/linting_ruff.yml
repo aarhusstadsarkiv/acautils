@@ -30,7 +30,7 @@ jobs:
           poetry config virtualenvs.create true
           poetry config virtualenvs.in-project true
           poetry install
-      - name: Run flake8, black, and mypy
+      - name: Run mypy, black, and ruff
         run: |
           poetry run black --check .
           poetry run ruff .
