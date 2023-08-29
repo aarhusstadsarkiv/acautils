@@ -1,4 +1,4 @@
-name: Linting_BRM
+name: Linting_BR
 
 on:
   pull_request:
