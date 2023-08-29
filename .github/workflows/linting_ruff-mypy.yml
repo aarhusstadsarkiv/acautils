@@ -1,0 +1,36 @@
+name: Linting_BRM
+
+on:
+  pull_request:
+  workflow_call:
+
+
+jobs:
+  check1:
+    name: Check linting & types
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v1
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+      - name: Set up poetry
+        uses: snok/install-poetry@v1
+      - name: Set up cache
+        uses: actions/cache@v1
+        with:
+          path: .venv
+          key: ${{ runner.os }}-venv-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-venv-
+      - name: Install dependencies
+        run: |
+          poetry config virtualenvs.create true
+          poetry config virtualenvs.in-project true
+          poetry install
+      - name: Run black, and ruff
+        run: |
+          poetry run black --check .
+          poetry run ruff .
