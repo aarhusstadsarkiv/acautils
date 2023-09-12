@@ -32,6 +32,6 @@ jobs:
           poetry install
       - name: Run flake8, black, and mypy
         run: |
-          poetry run flake8
+          poetry run flake8 --per-file-ignores='__init__.py:F401'
           poetry run black --check .
           poetry run mypy .
