@@ -1,7 +1,6 @@
 name: Linting_BR
 
 on:
-  pull_request:
   workflow_call:
 
 
